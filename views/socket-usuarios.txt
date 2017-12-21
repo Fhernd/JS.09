@@ -1,0 +1,29 @@
+<script>
+    var socket = io();
+    /*var usuario = prompt("Escribe tu nombre!", "Incognito");
+    if (usuario != null) {
+      socket.emit('new user', usuario);
+    }*/
+    var usuario = {{usuario | json_encode | safe}};
+    socket.emit('new user', usuario);
+
+    $('#form').submit(function (event) {
+
+        socket.emit('chat message', {usuario: usuario, mensaje: $('#message').val()});
+        $('#message').val('');
+        return false;
+    });
+
+    socket.on('chat message', function (msg) {
+
+        $('#cuerpo-chat').append($('<li>').html('<strong>' + msg.usuario + '</strong>: ' + msg.mensaje));
+    });
+
+    socket.on('new user', function (usuarios) {
+        $('#cuerpo-online').html('');
+        $.each(usuarios, function (i, usuario) {
+            $('#cuerpo-online').append($('<li>').text(usuario));
+        });
+    });
+
+</script>

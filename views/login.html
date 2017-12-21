@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+
+{% block titulo %}
+	Inicio de Sesión
+{% endblock %}
+
+{% block form %}
+<form role="form" action="/login" method="POST">
+	<div class="form-group">
+		 <label for="exampleInputEmail1">Nombre de usuario</label>
+		 <input type="text" name="usuario" class="form-control" id="exampleInputEmail1">
+	</div>
+	<div class="form-group">
+		 <label for="exampleInputPassword1">Password</label>
+		 <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+	</div>
+	<button type="submit" class="btn btn-default">Submit</button>
+	<div class="form-group">
+		 <p>Si no tienes una cuenta aún, porfavor <a href="/registro">regístrate</a></p>
+	</div>
+	<div class="form-group">
+		 <p>Entrar con <a href="/auth/twitter">twitter</a></p>
+	</div>
+</form>
+{% endblock %}

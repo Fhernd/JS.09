@@ -1,0 +1,30 @@
+{
+  "name": "OnlineDrawer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "NEXT Teacher",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "latest",
+    "connect-flash": "latest",
+    "connect-redis": "latest",
+    "cookie-parser": "latest",
+    "express": "latest",
+    "express-session": "latest",
+    "formidable": "^1.1.1",
+    "lodash": "latest",
+    "mongoose": "latest",
+    "mongoose-redis-cache": "latest",
+    "morgan": "latest",
+    "passport": "latest",
+    "passport-local": "latest",
+    "passport-twitter": "latest",
+    "redis": "latest",
+    "socket.io": "latest",
+    "swig": "latest"
+  }
+}
